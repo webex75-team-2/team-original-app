@@ -1,12 +1,15 @@
 import { collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     await addDoc(collection(db, "posts"), {
       title: title,
       content: content,
@@ -14,6 +17,8 @@ export default function CreatePost() {
 
     setTitle("");
     setContent("");
+
+    navigate("/postIndex");
   };
 
   return (
