@@ -1,5 +1,6 @@
 import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
+import { db } from "../firebase";
 
 export default function GetPosts() {
   const [posts, setPosts] = useState([]);

@@ -1,5 +1,6 @@
 import { collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
+import { db } from "../firebase";
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");
