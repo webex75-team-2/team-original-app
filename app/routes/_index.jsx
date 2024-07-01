@@ -1,3 +1,5 @@
+import { Link } from "@remix-run/react";
+
 export const meta = () => {
   return [
     { title: "New Remix SPA" },
@@ -10,6 +12,12 @@ export default function Index() {
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix (SPA Mode)</h1>
       <ul>
+        <li>
+          <Link to="/createPost">新規投稿</Link>
+        </li>
+        <li>
+          <Link to="/postIndex">投稿一覧</Link>
+        </li>
         <li>
           <a
             target="_blank"
