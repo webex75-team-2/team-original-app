@@ -1,119 +1,139 @@
-.App,
-.PostScreen,
-.PostList {
+.LoginPage,
+.CreatePostPage,
+.PostListPage {
   text-align: center;
   font-family: Arial, sans-serif;
   padding: 20px;
 }
 
-.App-header,
-.PostScreen-header,
-.PostList-header {
+.LoginPage-header,
+.CreatePostPage-header,
+.PostListPage-header {
   background-color: #282c34;
   padding: 20px;
   color: white;
+}
+
+input,
+textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #8cd5ea;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ef89bb;
 }
 
 form {
   margin: 20px 0;
 }
 
-input {
-  padding: 10px;
-  margin-right: 10px;
+.related-posts {
+  text-align: left;
+  padding: 20px;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #61dafb;
-  border: none;
-  color: white;
-  cursor: pointer;
+.post-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.social-media a {
-  margin: 0 10px;
-  color: #61dafb;
-  text-decoration: none;
+.page-change {
+  text-align: right;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  color: #23c02b;
 }
 
-.PopularPosts {
-  margin-top: 20px;
-}
-
-.PopularPosts h2 {
-  margin-bottom: 10px;
-}
-
-/* styles.css */
 body {
   font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
 }
 
 header {
-  background-color: #333;
-  padding: 1em;
+  background-color: #4682b4;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
 }
 
 nav ul {
-  list-style: none;
-  margin: 0;
+  list-style-type: none;
   padding: 0;
-  display: flex;
-  justify-content: space-around;
 }
 
-nav a {
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
 }
 
 main {
-  padding: 1em;
+  padding: 20px;
 }
 
-.posts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1em;
+#instructions {
+  background-color: #e0f7fa;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-.post {
-  background-color: white;
-  padding: 1em;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.post h2 {
-  margin-top: 0;
-}
-
-.actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1em;
+ol {
+  padding-left: 20px;
 }
 
 button {
-  background-color: #007bff;
+  background-color: #ff5722;
   color: white;
   border: none;
-  padding: 0.5em 1em;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #e64a19;
 }
-.scrollable {
-  max-height: 400px;
-  overflow-y: scroll;
-  border: 1px solid #ddd;
-  padding: 1rem;
+
+.like-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.like-button p {
+  margin: 0 0 0 5px;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.like-button:hover p {
+  color: red;
 }
