@@ -22,10 +22,14 @@ export default function GetPosts() {
   }, []);
 
   return (
-    <div>
-      <h1>投稿一覧</h1>
-      <Link to="/createPost">新規投稿</Link>
-      <ul>
+    <div className="PostListPage">
+      <header className="CreatePostPage-header">
+        <h1>投稿一覧</h1>
+        <Link to="/createPost" className="page-change">
+          新規投稿
+        </Link>
+      </header>
+      <ul className="post-list">
         {posts.map((post) => (
           <li key={post.id}>
             <h3>{post.title}</h3>
@@ -36,6 +40,20 @@ export default function GetPosts() {
           </li>
         ))}
       </ul>
+      <aside className="related-posts">
+        <h3>関連投稿</h3>
+        <ul>
+          <section id="instructions">
+            <h2>投稿の手順</h2>
+            <ol>
+              <li>投稿画面へ移動します。</li>
+              <li>タイトルと内容を入力します。</li>
+              <li>「投稿」ボタンをクリックします。</li>
+              <li>投稿が表示されます。</li>
+            </ol>
+          </section>
+        </ul>
+      </aside>
     </div>
   );
 }
