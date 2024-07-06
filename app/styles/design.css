@@ -1,0 +1,119 @@
+.App,
+.PostScreen,
+.PostList {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.App-header,
+.PostScreen-header,
+.PostList-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+form {
+  margin: 20px 0;
+}
+
+input {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.social-media a {
+  margin: 0 10px;
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.PopularPosts {
+  margin-top: 20px;
+}
+
+.PopularPosts h2 {
+  margin-bottom: 10px;
+}
+
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #333;
+  padding: 1em;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 1em;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
+}
+
+.post {
+  background-color: white;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post h2 {
+  margin-top: 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.scrollable {
+  max-height: 400px;
+  overflow-y: scroll;
+  border: 1px solid #ddd;
+  padding: 1rem;
+}

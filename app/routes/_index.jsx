@@ -1,6 +1,6 @@
 import { Link } from "@remix-run/react";
 import { useState } from "react";
-import Login from "../components/Login";
+import Login from "../components/Login.jsx";
 
 export const meta = () => {
   return [
@@ -16,10 +16,10 @@ export default function Index() {
       <Login />
       <ul>
         <li>
-          <Link to="/createPost">新規投稿</Link>
+          <Link to="/createPost">投稿画面へ</Link>
         </li>
         <li>
-          <Link to="/postIndex">投稿一覧</Link>
+          <Link to="/postIndex">投稿一覧へ</Link>
         </li>
       </ul>
     </div>

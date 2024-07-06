@@ -2,9 +2,13 @@ import React from "react";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import CreatePost from "../routes/createPost.jsx";
+import postindex from "../routes/postIndex.jsx";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [user] = useAuthState(auth);
+
   return (
     <>
       {user ? (
