@@ -1,14 +1,16 @@
-import { collection, addDoc } from "firebase/firestore";
-import { useState } from "react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { Link } from "@remix-run/react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [uid, setUid] = useState(null);
   const navigate = useNavigate();
 
   const category = [
@@ -18,13 +20,31 @@ export default function CreatePost() {
     { value: "kadai", label: "#課題" },
   ];
 
+  useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUid(user.uid);
+      } else {
+        setUid(null);
+      }
+    });
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!uid) {
+      alert("ユーザーがログインしていません。");
+      return;
+    }
 
     await addDoc(collection(db, "posts"), {
       title: title,
       content: content,
       category: selectedCategory ? selectedCategory.label : "カテゴリなし",
+      uid: uid,
+      createdAt: serverTimestamp(),
     });
 
     setTitle("");

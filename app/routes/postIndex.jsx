@@ -1,6 +1,6 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { useState, useEffect } from "react";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 import { LikeButton } from "../components/likebutton";
 import { Link } from "@remix-run/react";
 import DeleteButton from "../components/deleteButton";
@@ -10,7 +10,8 @@ export default function GetPosts() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const querySnapshot = await getDocs(collection(db, "posts"));
+      const q = query(collection(db, "posts"), orderBy("createdAt", "desc"));
+      const querySnapshot = await getDocs(q);
       const postsData = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
@@ -36,7 +37,9 @@ export default function GetPosts() {
             <p>{post.content}</p>
             <p>{post.category || "カテゴリなし"}</p>
             {post.id && <LikeButton postId={post.id} />}
-            {post.id && <DeleteButton postId={post.id} />}
+            {auth.currentUser && post.uid === auth.currentUser.uid && (
+              <DeleteButton postId={post.id} />
+            )}
           </li>
         ))}
       </ul>
