@@ -1,6 +1,6 @@
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState } from "react-firebase-hooks/auth/dist/index.cjs";
 
 function Login() {
   const [user] = useAuthState(auth);
