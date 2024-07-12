@@ -1,5 +1,6 @@
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase";
+import "../styles/design.css";
 
 export default function DeleteButton({ postId }) {
   const handleDelete = async () => {

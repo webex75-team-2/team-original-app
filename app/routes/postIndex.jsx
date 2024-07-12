@@ -4,6 +4,7 @@ import { auth, db } from "../firebase";
 import { LikeButton } from "../components/likebutton";
 import { Link } from "@remix-run/react";
 import DeleteButton from "../components/deleteButton";
+import "../styles/design.css";
 
 export default function GetPosts() {
   const [posts, setPosts] = useState([]);

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Select from "react-select";
 import { Link } from "@remix-run/react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import "../styles/design.css";
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");

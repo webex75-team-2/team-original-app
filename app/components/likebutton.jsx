@@ -9,6 +9,7 @@ import {
 } from "firebase/firestore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import "../styles/design.css";
 
 export function LikeButton({ postId }) {
   const userId = auth.currentUser?.uid;
