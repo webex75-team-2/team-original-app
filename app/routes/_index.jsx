@@ -4,7 +4,7 @@ import "../styles/design.css";
 
 export const meta = () => {
   return [
-    { title: "New Remix SPA" },
+    { title: "高校生向け匿名サイト" },
     { name: "description", content: "Welcome to Remix (SPA Mode)!" },
   ];
 };

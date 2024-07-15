@@ -102,6 +102,7 @@ main {
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 20px;
+  color: black;
 }
 
 ol {
@@ -136,4 +137,12 @@ button:hover {
 
 .like-button:hover p {
   color: red;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding-left: 0;
 }
