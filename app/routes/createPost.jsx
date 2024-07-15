@@ -19,6 +19,7 @@ export default function CreatePost() {
     { value: "bukatsu", label: "#部活" },
     { value: "shinro", label: "#進路" },
     { value: "kadai", label: "#課題" },
+    { value: "other", label: "その他" },
   ];
 
   useEffect(() => {
@@ -35,6 +36,11 @@ export default function CreatePost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (title.trim() === "" || content.trim() === "" || !selectedCategory) {
+      alert("全ての項目を入力してください。");
+      return;
+    }
+
     if (!uid) {
       alert("ユーザーがログインしていません。");
       return;
@@ -43,9 +49,10 @@ export default function CreatePost() {
     await addDoc(collection(db, "posts"), {
       title: title,
       content: content,
-      category: selectedCategory ? selectedCategory.label : "カテゴリなし",
+      category: selectedCategory ? selectedCategory.label : "",
       uid: uid,
       createdAt: serverTimestamp(),
+      likeCount: 0,
     });
 
     setTitle("");
@@ -89,6 +96,9 @@ export default function CreatePost() {
 
       <Link to="/postIndex" className="page-change">
         投稿一覧
+      </Link>
+      <Link to="/ranking" className="page-change">
+        ランキング
       </Link>
       <aside className="related-posts">
         <h3>関連投稿</h3>

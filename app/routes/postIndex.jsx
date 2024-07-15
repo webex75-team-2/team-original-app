@@ -8,6 +8,19 @@ import "../styles/design.css";
 
 export default function GetPosts() {
   const [posts, setPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState([]);
+
+  const handleCategoryChange = (e) => {
+    const selectedCategory = e.target.value || "";
+    if (selectedCategory === "") {
+      setFilteredPosts(posts);
+    } else {
+      const filteredPosts = posts.filter(
+        (post) => post.category === selectedCategory
+      );
+      setFilteredPosts(filteredPosts);
+    }
+  };
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -18,6 +31,7 @@ export default function GetPosts() {
         ...doc.data(),
       }));
       setPosts(postsData);
+      setFilteredPosts(postsData);
     };
 
     fetchPosts();
@@ -30,14 +44,25 @@ export default function GetPosts() {
         <Link to="/createPost" className="page-change">
           新規投稿
         </Link>
+        <Link to="/ranking" className="page-change">
+          ランキング
+        </Link>
+        <select onChange={handleCategoryChange}>
+          <option value="">すべてのカテゴリ</option>
+          <option value="#校則">#校則</option>
+          <option value="#部活">#部活</option>
+          <option value="#進路">#進路</option>
+          <option value="#課題">#課題</option>
+          <option value="その他">その他</option>
+        </select>
       </header>
       <ul className="post-list">
-        {posts.map((post) => (
+        {filteredPosts.map((post) => (
           <li key={post.id}>
             <h3>{post.title}</h3>
             <p>{post.content}</p>
-            <p>{post.category || "カテゴリなし"}</p>
-            {post.id && <LikeButton postId={post.id} />}
+            <p>{post.category === "その他" ? "" : post.category}</p>
+            {post.id && <LikeButton postId={post.id} ranking="false" />}
             {auth.currentUser && post.uid === auth.currentUser.uid && (
               <DeleteButton postId={post.id} />
             )}
