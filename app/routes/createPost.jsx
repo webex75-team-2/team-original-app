@@ -63,7 +63,7 @@ export default function CreatePost() {
   };
 
   return (
-    <header className="CreatePostPage-header">
+    <header className="CreatePostPage-header2">
       <h1>新規投稿</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">タイトル：</label>
@@ -72,6 +72,7 @@ export default function CreatePost() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="内容：ex)　校則"
+          className="radious"
         />
 
         <label htmlFor="content">本文:</label>
@@ -80,17 +81,17 @@ export default function CreatePost() {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           placeholder="内容：ex) 頭髪規定が厳しい！！"
+          className="radious"
         />
 
-        <label htmlFor="category" className="category">
-          カテゴリ:
-        </label>
+        <label htmlFor="category">カテゴリ:</label>
         <Select
           id="category"
           options={category}
           value={selectedCategory}
           onChange={setSelectedCategory}
           placeholder="選択."
+          className="color"
         />
 
         <button type="submit">投稿する</button>
@@ -108,10 +109,12 @@ export default function CreatePost() {
           <section id="instructions">
             <h2>投稿の手順</h2>
             <ol>
-              <li>投稿画面へ移動します。</li>
-              <li>タイトルと内容を入力します。</li>
-              <li>「投稿」ボタンをクリックします。</li>
-              <li>投稿が表示されます。</li>
+              <li>1, 投稿画面へ移動します。</li>
+              <li>
+                2, ①タイトル,
+                ②内容を入力し、③カテゴリを選択します。④「投稿」ボタンをクリックします。
+              </li>
+              <li>3, 投稿が表示されます。</li>
             </ol>
           </section>
         </ul>
