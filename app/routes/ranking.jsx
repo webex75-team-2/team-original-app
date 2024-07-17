@@ -70,6 +70,18 @@ export default function GetPosts() {
           </li>
         ))}
       </ul>
+      <aside className="related-posts">
+        <h3>簡単説明</h3>
+        <ul>
+          <section id="instructions">
+            <h2>ランキングの見方</h2>
+            <ol>
+              <li>1, 人気の投稿がみれます。</li>
+              <li>2, 新規投稿に戻ると投稿を増やせます。</li>
+            </ol>
+          </section>
+        </ul>
+      </aside>
     </div>
   );
 }

@@ -47,7 +47,7 @@ export default function GetPosts() {
         <Link to="/ranking" className="page-change">
           ランキング
         </Link>
-        <select onChange={handleCategoryChange}>
+        <select onChange={handleCategoryChange} className="categorycolor">
           <option value="" className="select-category">
             すべてのカテゴリ
           </option>
@@ -72,15 +72,14 @@ export default function GetPosts() {
         ))}
       </div>
       <aside className="related-posts">
-        <h3>関連投稿</h3>
+        <h3>簡単説明</h3>
         <ul>
           <section id="instructions">
-            <h2>投稿の手順</h2>
+            <h2>いいねの手順</h2>
             <ol>
-              <li>投稿画面へ移動します。</li>
-              <li>タイトルと内容を入力します。</li>
-              <li>「投稿」ボタンをクリックします。</li>
-              <li>投稿が表示されます。</li>
+              <li>1, カテゴリを選択します。</li>
+              <li>2, 投稿にいいねします。</li>
+              <li>3, ランキング画面に移動すると順位が見れます</li>
             </ol>
           </section>
         </ul>

@@ -13,6 +13,18 @@
   padding: 20px;
   color: white;
 }
+.CreatePostPage-header2 {
+  .oneArea {
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+  }
+  .oneArea {
+    background-color: #ccd4e4;
+    padding: 20px;
+    color: white;
+  }
+}
 
 input,
 textarea {
@@ -64,9 +76,6 @@ form {
   font-family: Arial, sans-serif;
   padding: 20px;
   color: #23c02b;
-}
-
-.select-category {
 }
 
 body {
@@ -159,6 +168,22 @@ ul {
   padding-left: 0;
 }
 
-.category {
+.color {
   width: 20%;
+  color: #282c34;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.radious {
+  border-radius: 7px;
+  font-size: larger;
+}
+
+.categorycolor {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #22342d;
+  color: #23c02b;
 }
