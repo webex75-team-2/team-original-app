@@ -82,7 +82,9 @@ export default function CreatePost() {
           placeholder="内容：ex) 頭髪規定が厳しい！！"
         />
 
-        <label htmlFor="category">カテゴリ:</label>
+        <label htmlFor="category" className="category">
+          カテゴリ:
+        </label>
         <Select
           id="category"
           options={category}

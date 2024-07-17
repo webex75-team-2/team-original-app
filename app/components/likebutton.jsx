@@ -77,7 +77,7 @@ export function LikeButton({ postId, ranking }) {
     <div>
       <button onClick={handleClick}>
         <FontAwesomeIcon icon={faHeart} color={isLiked ? "red" : "grey"} />
-        <p>{likeCount}</p>
+        {likeCount}
       </button>
     </div>
   );

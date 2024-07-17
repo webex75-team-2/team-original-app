@@ -57,7 +57,7 @@ export default function GetPosts() {
       </header>
       <ul className="post-list">
         {rankedPosts.map((post) => (
-          <li key={post.id}>
+          <li key={post.id} className="post">
             <h3>
               {post.rank}位: {post.title}
             </h3>
