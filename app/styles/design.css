@@ -46,8 +46,17 @@ form {
 
 .post-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.post {
+  width: 20%;
+  background-color: #dfdad3;
+  margin: 15px;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 .page-change {
@@ -55,6 +64,9 @@ form {
   font-family: Arial, sans-serif;
   padding: 20px;
   color: #23c02b;
+}
+
+.select-category {
 }
 
 body {
@@ -110,7 +122,7 @@ ol {
 }
 
 button {
-  background-color: #ff5722;
+  background-color: #b0340eb1;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -120,7 +132,7 @@ button {
 }
 
 button:hover {
-  background-color: #e64a19;
+  background-color: #e62a19;
 }
 
 .like-button {
@@ -145,4 +157,8 @@ li {
 
 ul {
   padding-left: 0;
+}
+
+.category {
+  width: 20%;
 }

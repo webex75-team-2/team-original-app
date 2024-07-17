@@ -48,7 +48,9 @@ export default function GetPosts() {
           ランキング
         </Link>
         <select onChange={handleCategoryChange}>
-          <option value="">すべてのカテゴリ</option>
+          <option value="" className="select-category">
+            すべてのカテゴリ
+          </option>
           <option value="#校則">#校則</option>
           <option value="#部活">#部活</option>
           <option value="#進路">#進路</option>
@@ -56,9 +58,9 @@ export default function GetPosts() {
           <option value="その他">その他</option>
         </select>
       </header>
-      <ul className="post-list">
+      <div className="post-list">
         {filteredPosts.map((post) => (
-          <li key={post.id}>
+          <div key={post.id} className="post">
             <h3>{post.title}</h3>
             <p>{post.content}</p>
             <p>{post.category === "その他" ? "" : post.category}</p>
@@ -66,9 +68,9 @@ export default function GetPosts() {
             {auth.currentUser && post.uid === auth.currentUser.uid && (
               <DeleteButton postId={post.id} />
             )}
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
       <aside className="related-posts">
         <h3>関連投稿</h3>
         <ul>
